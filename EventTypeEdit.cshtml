@@ -1,0 +1,46 @@
+﻿@model CERS.ViewModels.EventTypeViewModel
+@{
+	string pageTitle = "Edit Event Type";
+	ViewBag.Title = pageTitle;
+	using ( Html.CERS().Layout().BeginSubNavigationBlock( "Edit Event Type", Model.Entity.Name ) )
+	{
+		@Html.CERS().Layout().SubNavigationBreadcrumb( "Home", Url.CERSRouteUrl( CommonRoute.Switchboard ) )
+		@Html.CERS().Layout().SubNavigationSeparator()
+		@Html.CERS().Layout().SubNavigationBreadcrumb( "CERS System Tools", Url.CERSRouteUrl( AdminRoute.Home ) )
+		@Html.CERS().Layout().SubNavigationSeparator()
+		@Html.CERS().Layout().SubNavigationBreadcrumb( "Event Types &amp; Notification/Email Templates", Url.CERSRouteUrl( AdminRoute.EventHome ) )
+		@Html.CERS().Layout().SubNavigationSeparator()
+		@Html.CERS().Layout().SubNavigationBreadcrumb( "Event Types", Url.CERSRouteUrl( AdminRoute.EventTypes ) )
+		@Html.CERS().Layout().SubNavigationSeparator()
+		@Html.CERS().Layout().SubNavigationBreadcrumb( pageTitle )
+	}
+	<br />
+	using ( Html.CERS().Layout().BeginContentBlockPanel( "", CERSColorOption.Plain ) )
+	{
+		Html.CERS().Layout().BeginContentBlockHeader( "" ).End();
+
+		using ( Html.CERS().Layout().BeginContentBlockContent() )
+		{
+			using ( Html.BeginForm() ) { 
+			
+				@Html.EditorFor( m => m.Entity, new { 
+					Categories = Model.Categories, 
+					DeliveryMechanisms = Model.DeliveryMechanisms, 
+					EmailTemplates = Model.EmailTemplates, 
+					NotificationTemplates = Model.NotificationTemplates, 
+					Priorities = Model.Priorities, 
+					Statuses = Model.Statuses,
+					AppliesTo = Model.AppliesTo,
+					EmailsTo = Model.EmailsTo 
+					} 
+				)
+	
+				@Html.CERS().Layout().ClearBoth()
+				@Html.CERS().Layout().Form().ActionButtonURL( "Cancel", Url.CERSRouteUrl( AdminRoute.EventTypes ), color: CERSColorOption.Grey )
+				@Html.CERS().Layout().Form().Button("Save", HtmlButtonType.Submit)
+				@Html.CERS().Layout().ClearBoth()
+			}
+		}
+		@Html.CERS().Layout().ContentBlockFooter()
+	}
+}
