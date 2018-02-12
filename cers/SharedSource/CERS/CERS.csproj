@@ -1,0 +1,1328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Development</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3B135D0F-3E84-4A66-8B40-2DF6275CBDCD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CERS</RootNamespace>
+    <AssemblyName>CERS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DEVELOPMENT</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Training\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TRAINING</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <OutputPath>bin\Production-Release\</OutputPath>
+    <DefineConstants>TRACE;PRODUCTION</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;STAGING</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Testing|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Testing\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;TESTING</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Documentation|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Documentation\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;DOCUMENTATION</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DataAnnotationsExtensions">
+      <HintPath>..\..\SharedBinaries\DataAnnotatinosExtentions\DataAnnotationsExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="DataAnnotationsExtensions.ClientValidation">
+      <HintPath>..\..\SharedBinaries\DataAnnotatinosExtentions\DataAnnotationsExtensions.ClientValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CERS\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.5, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <HintPath>..\..\SharedBinaries\DotNetZip\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CERS\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Telerik.Reporting">
+      <HintPath>..\..\SharedBinaries\Telerik\Telerik.Reporting.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="wnvhtmltopdf">
+      <HintPath>..\..\SharedBinaries\Winnovative Pdf\wnvhtmltopdf.dll</HintPath>
+    </Reference>
+    <Reference Include="wnvpdfmerge">
+      <HintPath>..\..\SharedBinaries\Winnovative Pdf\wnvpdfmerge.dll</HintPath>
+    </Reference>
+    <Reference Include="wnvxls, Version=1.2.1.0, Culture=neutral, PublicKeyToken=5b5f377bc08a4d32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SharedBinaries\Winnovative Excel\wnvxls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CERS\VersionInfo.cs">
+      <Link>VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AddressServices\AddressServiceConfiguration.cs" />
+    <Compile Include="AddressServices\AddressServiceExtensions.cs" />
+    <Compile Include="AddressServices\AddressServiceProxy.cs" />
+    <Compile Include="AddressServices\AddressInformation.cs" />
+    <Compile Include="AddressServices\CityZipValidationResult.cs" />
+    <Compile Include="AddressServices\ParsedAddress.cs" />
+    <Compile Include="AddressServices\StandardizedBusinessName.cs" />
+    <Compile Include="AddressServices\StandardizedAddress.cs" />
+    <Compile Include="Compositions\FacilityOperationPackage.cs" />
+    <Compile Include="Compositions\FacilityCreatePackageWorkspace.cs" />
+    <Compile Include="Compositions\RegulatorFacilityMetadataPackage.cs" />
+    <Compile Include="Compositions\RegulatorFacilityMetadataPackageWorkspace.cs" />
+    <Compile Include="Compositions\SimpleNamedID.cs" />
+    <Compile Include="Configuration\DeferredJobConfigurationElement.cs" />
+    <Compile Include="Configuration\JobDocumentCleanUpConfigurationElement.cs" />
+    <Compile Include="Configuration\PrintJobConfigurationElement.cs" />
+    <Compile Include="Configuration\FacilityInformationDeferredProcessingConfigurationElement.cs" />
+    <Compile Include="Configuration\DataModelConfigurationElement.cs" />
+    <Compile Include="Configuration\HazardousMaterialsInventoryDeferredProcessingConfigurationElement.cs" />
+    <Compile Include="Compositions\FacilityOperationPackageWorkspace.cs" />
+    <Compile Include="Configuration\SubmittalDeltaConfigurationElement.cs" />
+    <Compile Include="DataAnnotations\RequiredIfAttribute.cs" />
+    <Compile Include="DataElementCodeCollection.cs" />
+    <Compile Include="DataElementItem.cs" />
+    <Compile Include="ICERSRepositoryManager.cs" />
+    <Compile Include="ActivityLogEntryReceivedEventArgs.cs" />
+    <Compile Include="IDataElementCode.cs" />
+    <Compile Include="IDataElementItem.cs" />
+    <Compile Include="Model\Partials\CERSStatistic.cs" />
+    <Compile Include="Model\Partials\InventorySearch.cs" />
+    <Compile Include="Model\Partials\DeferredJob.cs" />
+    <Compile Include="Model\Partials\DataElementCode.cs" />
+    <Compile Include="Model\Partials\AddFacilityWizardState.cs" />
+    <Compile Include="Model\CERSModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CERSModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Partials\DataContainer.cs" />
+    <Compile Include="Model\Partials\DataContainerTable.cs" />
+    <Compile Include="Model\Partials\DataElement.cs" />
+    <Compile Include="Model\Partials\DataSource.cs" />
+    <Compile Include="Model\Partials\LUTDataSubmittalDeltaSignificance.cs" />
+    <Compile Include="Model\Partials\LUTDataType.cs" />
+    <Compile Include="Model\Partials\LUTDataTypeGeneral.cs" />
+    <Compile Include="Model\Partials\LUTDataUIElementType.cs" />
+    <Compile Include="Model\Partials\LUTXmlSchemaVersionStatus.cs" />
+    <Compile Include="Model\Partials\PrintJobUnMergeableDocument.cs" />
+    <Compile Include="Model\Partials\LUTDocumentStatus.cs" />
+    <Compile Include="Model\Partials\PrintJob.cs" />
+    <Compile Include="Model\Partials\FacilityEDTTransaction.cs" />
+    <Compile Include="Model\Partials\FacilityRegulatorSubmittalElementEDTTransaction.cs" />
+    <Compile Include="Model\Partials\FacilitySubmittalElementEDTTransaction.cs" />
+    <Compile Include="Model\Partials\LUTDeferredProcessingBatchType.cs" />
+    <Compile Include="Model\Partials\LUTEmailPriority.cs" />
+    <Compile Include="Model\Partials\LUTRegulatorStatus.cs" />
+    <Compile Include="Model\Partials\LUTSurveyResponseReviewStatus.cs" />
+    <Compile Include="Model\Partials\LUTDeferredProcessingItemStatus.cs" />
+    <Compile Include="Model\Partials\SubmittalDeltaResult.cs" />
+    <Compile Include="Model\Partials\Survey.cs" />
+    <Compile Include="Model\Partials\LUTSurveyStatus.cs" />
+    <Compile Include="Model\Partials\EDTAuthenticationRequest.cs" />
+    <Compile Include="Model\Partials\EDTTransactionXml.cs" />
+    <Compile Include="Model\Partials\FacilityTransferHistory.cs" />
+    <Compile Include="Model\Partials\InventorySummary.cs" />
+    <Compile Include="Model\Partials\LUTAddFacilityWizardResult.cs" />
+    <Compile Include="Model\Partials\LUTAddFacilityWizardStep.cs" />
+    <Compile Include="Model\Partials\LUTEDTAuthenticationRequestResult.cs" />
+    <Compile Include="Model\Partials\LUTEDTTransactionStatus.cs" />
+    <Compile Include="Model\Partials\LUTEDTTransactionXmlDirection.cs" />
+    <Compile Include="Model\Partials\LUTGeoCollectionMethod.cs" />
+    <Compile Include="Model\Partials\LUTGeoReferenceDatum.cs" />
+    <Compile Include="Model\Partials\LUTGeoReferencePoint.cs" />
+    <Compile Include="Model\Partials\LUTSubmittalType.cs" />
+    <Compile Include="Model\Partials\LUTSurveyQuestionStatus.cs" />
+    <Compile Include="Model\Partials\LUTSurveyQuestionType.cs" />
+    <Compile Include="Model\Partials\SurveyQuestion.cs" />
+    <Compile Include="Model\Partials\SurveyQuestionAnswer.cs" />
+    <Compile Include="Model\Partials\SurveyResponseQuestion.cs" />
+    <Compile Include="Model\Partials\SurveyResponse.cs" />
+    <Compile Include="Model\Partials\SurveyResponseView.cs" />
+    <Compile Include="CERSRepositoryManager.cs" />
+    <Compile Include="Model\Partials\XmlSchemaVersionView.cs" />
+    <Compile Include="Reports\DTO\USTInstallModCertDTO.cs" />
+    <Compile Include="Reports\DTO\SubmittalCoverPageDTO.cs" />
+    <Compile Include="Reports\ReportActions.cs" />
+    <Compile Include="Reports\DTO\BPFacilityChemicalDTO.cs" />
+    <Compile Include="Reports\DTO\BusinessActivitiesDTO.cs" />
+    <Compile Include="Reports\DTO\BusinessOwnerOperatorDTO.cs" />
+    <Compile Include="Reports\DTO\CersReportDTO.cs" />
+    <Compile Include="Reports\DTO\HazMatInventoryDTO.cs" />
+    <Compile Include="Reports\DTO\RemoteWasteConsolidationSiteAnnualDTO.cs" />
+    <Compile Include="Reports\DTO\TieredPermittingCADTO.cs" />
+    <Compile Include="Reports\DTO\TieredPermittingCELDTO.cs" />
+    <Compile Include="Reports\DTO\TieredPermittingCESQTDTO.cs" />
+    <Compile Include="Reports\DTO\TieredPermittingCESWDTO.cs" />
+    <Compile Include="Reports\DTO\TieredPermittingDTO.cs" />
+    <Compile Include="Reports\DTO\TieredPermittingFacilityDTO.cs" />
+    <Compile Include="Reports\DTO\TieredPermittingFinancialAssuranceDTO.cs" />
+    <Compile Include="Reports\DTO\TieredPermittingPBRDTO.cs" />
+    <Compile Include="Reports\DTO\USTFacilityInformationDTO.cs" />
+    <Compile Include="Reports\DTO\USTMonitoringPlanDTO.cs" />
+    <Compile Include="Reports\DTO\USTTankInformationDTO.cs" />
+    <Compile Include="Reports\Reports\BusinessActivitiesReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\BusinessActivitiesReport.Designer.cs">
+      <DependentUpon>BusinessActivitiesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\BusinessOwnerOperatorReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\BusinessOwnerOperatorReport.Designer.cs">
+      <DependentUpon>BusinessOwnerOperatorReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\CERSReportMaster.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\CERSReportMaster.Designer.cs">
+      <DependentUpon>CERSReportMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\HazMatInventoryMatrixReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\HazMatInventoryMatrixReport.Designer.cs">
+      <DependentUpon>HazMatInventoryMatrixReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\HazMatInventoryReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\HazMatInventoryReport.Designer.cs">
+      <DependentUpon>HazMatInventoryReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\RemoteWasteConsolidationSiteAnnualNotificationReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\RemoteWasteConsolidationSiteAnnualNotificationReport.Designer.cs">
+      <DependentUpon>RemoteWasteConsolidationSiteAnnualNotificationReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\SubmittalCoverPageReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\SubmittalCoverPageReport.Designer.cs">
+      <DependentUpon>SubmittalCoverPageReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingCAReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingCAReport.Designer.cs">
+      <DependentUpon>TieredPermittingCAReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingCELReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingCELReport.Designer.cs">
+      <DependentUpon>TieredPermittingCELReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingCESQTReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingCESQTReport.Designer.cs">
+      <DependentUpon>TieredPermittingCESQTReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingCESWReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingCESWReport.Designer.cs">
+      <DependentUpon>TieredPermittingCESWReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingFacilityReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingFacilityReport.Designer.cs">
+      <DependentUpon>TieredPermittingFacilityReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingFinancialAssuranceReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingFinancialAssuranceReport.Designer.cs">
+      <DependentUpon>TieredPermittingFinancialAssuranceReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingPBRReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingPBRReport.Designer.cs">
+      <DependentUpon>TieredPermittingPBRReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\TieredPermittingReport.Designer.cs">
+      <DependentUpon>TieredPermittingReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\USTFacilityInformationReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\USTFacilityInformationReport.Designer.cs">
+      <DependentUpon>USTFacilityInformationReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\USTInstallModCertReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\USTInstallModCertReport.Designer.cs">
+      <DependentUpon>USTInstallModCertReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\USTMonitoringPlanReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\USTMonitoringPlanReport.Designer.cs">
+      <DependentUpon>USTMonitoringPlanReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Reports\USTTankInformationReport.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Reports\USTTankInformationReport.Designer.cs">
+      <DependentUpon>USTTankInformationReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\AddFacilityWizardStateRepository.cs" />
+    <Compile Include="Repository\Infrastructure\Security\AccountRepository.cs" />
+    <Compile Include="Repository\Infrastructure\Security\SecurityRepository.cs" />
+    <Compile Include="Repository\InventorySearchRepository.cs" />
+    <Compile Include="Repository\DeferredJobRepository.cs" />
+    <Compile Include="Repository\DataRegistry\DataContainerRepository.cs" />
+    <Compile Include="Repository\DataRegistry\DataContainerTableRepository.cs" />
+    <Compile Include="Repository\DataRegistry\DataElementCodeRepository.cs" />
+    <Compile Include="Repository\DataRegistry\DataElementRepository.cs" />
+    <Compile Include="Repository\DataRegistry\DataRegistryRepository.cs" />
+    <Compile Include="Repository\DataRegistry\DataSourceRepository.cs" />
+    <Compile Include="Repository\DataRegistry\IDataRegistryRepository.cs" />
+    <Compile Include="Repository\CERSStatisticsRepository.cs" />
+    <Compile Include="Repository\PrintJobUnMergeableDocumentRepository.cs" />
+    <Compile Include="Repository\PrintJobRepository.cs" />
+    <Compile Include="Repository\EDTAuthenticationRequestRepository.cs" />
+    <Compile Include="Repository\EDTTransactionQueryArgumentRepository.cs" />
+    <Compile Include="Repository\EDTTransactionXmlRepository.cs" />
+    <Compile Include="ICERSRepository.cs" />
+    <Compile Include="Repository\FacilityEDTTransactionRepository.cs" />
+    <Compile Include="Repository\FacilityRegulatorSubmittalElementEDTTransactionRepository.cs" />
+    <Compile Include="Repository\FacilitySubmittalElementEDTTransactionRepository.cs" />
+    <Compile Include="Repository\FacilityTransferHistoryRepository.cs" />
+    <Compile Include="Repository\Infrastructure\InfrastructureRepository.cs" />
+    <Compile Include="Repository\Infrastructure\SurveyQuestionRepository.cs" />
+    <Compile Include="Repository\Infrastructure\SurveyQuestionResponseRepository.cs" />
+    <Compile Include="Repository\InventorySummaryRepository.cs" />
+    <Compile Include="Repository\Infrastructure\SurveyRepository.cs" />
+    <Compile Include="Repository\Infrastructure\SurveyResponseRepository.cs" />
+    <Compile Include="CERSServiceLocator.cs" />
+    <Compile Include="Repository\SubmittalDeltaResultRepository.cs" />
+    <Compile Include="ServiceProcesses\DeferredJobServiceProcess.cs" />
+    <Compile Include="ServiceProcesses\JobDocumentCleanUpServiceProcess.cs" />
+    <Compile Include="ServiceProcesses\PrintJobServiceProcess.cs" />
+    <Compile Include="ServiceProcesses\FacilityInformationDeferredProcessingService.cs" />
+    <Compile Include="ServiceProcesses\HazardousMaterialsInventoryDeferredProcessingService.cs" />
+    <Compile Include="ServiceProcesses\SubmittalDeltaServiceProcess.cs" />
+    <Compile Include="SubmittalDeltaAttribute.cs" />
+    <Compile Include="SystemServices\ActivityLogService.cs" />
+    <Compile Include="SystemServices\BusinessService.cs" />
+    <Compile Include="SystemServices\DeferredJobService.cs" />
+    <Compile Include="SystemServices\JobDocumentCleanUpService.cs" />
+    <Compile Include="SystemServices\EmailService.cs" />
+    <Compile Include="SystemServices\ErrorReportingService.cs" />
+    <Compile Include="SystemServices\EventService.cs" />
+    <Compile Include="SystemServices\ExcelService.cs" />
+    <Compile Include="SystemServices\PrintJobService.cs" />
+    <Compile Include="SystemServices\FacilityInformationBusinessService.cs" />
+    <Compile Include="SystemServices\FacilityService.cs" />
+    <Compile Include="SystemServices\FacilitySubmittalElementBusinessService.cs" />
+    <Compile Include="SystemServices\FacilitySubmittalModelEntityService.cs" />
+    <Compile Include="SystemServices\FacilitySubmittalService.cs" />
+    <Compile Include="SystemServices\InventorySummaryService.cs" />
+    <Compile Include="SystemServices\ViewModelServices\Facility\FacilityManagementViewModelService.cs" />
+    <Compile Include="SystemServices\ViewModelServices\Facility\FacilityViewModelService.cs" />
+    <Compile Include="SystemServices\GeoService.cs" />
+    <Compile Include="SystemServices\HazardousMaterialsInventoryBusinessService.cs" />
+    <Compile Include="ICERSSystemService.cs" />
+    <Compile Include="ICERSSystemServiceManager.cs" />
+    <Compile Include="SystemServices\NotificationService.cs" />
+    <Compile Include="SystemServices\PdfService.cs" />
+    <Compile Include="SystemServices\ReportService.cs" />
+    <Compile Include="SystemServices\SecurityService.cs" />
+    <Compile Include="SystemServices\SubmittalDeltaService.cs" />
+    <Compile Include="SystemServices\SystemServiceBase.cs" />
+    <Compile Include="CERSSystemServiceManager.cs" />
+    <Compile Include="SystemServices\TextMacroProcessingService.cs" />
+    <Compile Include="SystemServices\ViewModelService.cs" />
+    <Compile Include="SystemServices\ViewModelServices\Infrastructure\InfrastructureViewModelService.cs" />
+    <Compile Include="SystemServices\ViewModelServices\Infrastructure\SurveyViewModelService.cs" />
+    <Compile Include="SystemServices\ViewModelServices\Organization\OrganizationManagementViewModelService.cs" />
+    <Compile Include="SystemServices\ViewModelServices\Organization\OrganizationViewModelService.cs" />
+    <Compile Include="SystemServices\XmlService.cs" />
+    <Compile Include="Validation\DocumentSizeValidationResult.cs" />
+    <Compile Include="Validation\DocumentValidationResult.cs" />
+    <Compile Include="Validation\DocumentFormatValidationResult.cs" />
+    <Compile Include="Compositions\RegulatorSubmittalElementLocalRequirementData.cs" />
+    <Compile Include="Configuration\EmailQueueConfigurationElement.cs" />
+    <Compile Include="Configuration\ServiceProcessesConfigurationElement.cs" />
+    <Compile Include="Configuration\ServiceProcessPluginConfigurationElement.cs" />
+    <Compile Include="Configuration\ServiceProcessPluginConfigurationElementCollection.cs" />
+    <Compile Include="Model\Partials\EmailQueueProcessReport.cs" />
+    <Compile Include="Model\Partials\Enhancement.cs" />
+    <Compile Include="Model\Partials\EnhancementUserComment.cs" />
+    <Compile Include="Model\Partials\LUTEnhancementAssignee.cs" />
+    <Compile Include="Model\Partials\LUTEnhancementPortal.cs" />
+    <Compile Include="Model\Partials\LUTEnhancementPriority.cs" />
+    <Compile Include="Model\Partials\LUTEnhancementStatus.cs" />
+    <Compile Include="Model\Partials\LUTOrganizationType.cs" />
+    <Compile Include="Repository\EmailQueueProcessReportRepository.cs" />
+    <Compile Include="Repository\EnhancementCommentRepository.cs" />
+    <Compile Include="Repository\EnhancementRepository.cs" />
+    <Compile Include="ServiceProcesses\EmailServiceProcess.cs" />
+    <Compile Include="ServiceProcesses\PluginTimerServiceProcess.cs" />
+    <Compile Include="ServiceProcesses\ServiceProcessBase.cs" />
+    <Compile Include="ServiceProcesses\TimerServiceProcessBase.cs" />
+    <Compile Include="Validation\EmailValidatorAttribute.cs" />
+    <Compile Include="Validation\FacilitySubmittalModelEntityValidator.cs" />
+    <Compile Include="Validation\ObsoleteDataElementValidatorAttribute.cs" />
+    <Compile Include="Validation\SqlServerDateTimeValidatorAttribute.cs" />
+    <Compile Include="ViewModels\AccountManagement\RecoverCredentialViewModel.cs" />
+    <Compile Include="ViewModels\AccountManagement\RecoverPasswordViewModel.cs" />
+    <Compile Include="ViewModels\AccountManagement\RecoverUsernameViewModel.cs" />
+    <Compile Include="ViewModels\AjaxDataSourceConfigurationViewModel.cs" />
+    <Compile Include="ViewModels\Chemicals\RecommendChemicalChangesViewModel.cs" />
+    <Compile Include="ViewModels\Contacts\ContactWithNoAccountViewModel.cs" />
+    <Compile Include="ViewModels\CERSDeferredProcessingViewModel.cs" />
+    <Compile Include="ViewModels\CERSDeferredProcessingGridViewModel.cs" />
+    <Compile Include="ViewModels\Contacts\EntityContactGridView.cs" />
+    <Compile Include="ViewModels\Contacts\PeopleGridView.cs" />
+    <Compile Include="ViewModels\EDT\EDTRegulatorTransactionSummaryGridViewModel.cs" />
+    <Compile Include="ViewModels\EDT\EDTRegulatorTransactionSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Enhancements\EnhancementExcelGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilityInspectionStatusViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilityInspectionStatusGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\InventorySummaryViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\Security\AccountChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\RegionalInventoryMaterialsSearchViewModel.cs" />
+    <Compile Include="ViewModels\DeferredJobViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilityReportingStatusGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilityReportingStatusViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\DataRegistry\DataElementCodeGridViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\DataRegistry\DataRegistryElementGridViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\DataRegistry\DataRegistryElementViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\DataRegistry\DataRegistryHomeViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\DataRegistry\DataRegistrySearchConfigViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\DataRegistry\DataRegistrySearchViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\EmailQueueProcessReportGridViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\EmailQueueReportViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\Security\AccountGridViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\Security\AccountViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\Security\PermissionGroupGridViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\Security\PermissionGroupViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\Surveys\SurveyResponseGridViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\FacilityMetadataUploadViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\UPABusinessUsersViewModel.cs" />
+    <Compile Include="ViewModels\PrintJobViewModel.cs" />
+    <Compile Include="ViewModels\EDT\AuthenticationRequestGridViewModel.cs" />
+    <Compile Include="ViewModels\EDT\AuthenticationRequestViewModel.cs" />
+    <Compile Include="ViewModels\EDT\EDTAccountPermissionGridViewModel.cs" />
+    <Compile Include="ViewModels\EDT\EDTAuthorizedRegulatorsByTierGridViewModel.cs" />
+    <Compile Include="ViewModels\EDT\EDTAuthorizedRegulatorsByTierViewModel.cs" />
+    <Compile Include="ViewModels\EDT\EDTTransactionStatisticGridViewModel.cs" />
+    <Compile Include="ViewModels\EDT\EDTTransactionStatisticsViewModel.cs" />
+    <Compile Include="ViewModels\EDT\TransactionQueryArgumentGridViewModel.cs" />
+    <Compile Include="ViewModels\EDT\TransactionActivityLogGridViewModel.cs" />
+    <Compile Include="ViewModels\EDT\TransactionMessageGridViewModel.cs" />
+    <Compile Include="ViewModels\EDT\TransactionSearchViewModel.cs" />
+    <Compile Include="ViewModels\EDT\TransactionViewModel.cs" />
+    <Compile Include="ViewModels\Enhancements\EnhancementCommentEditViewModel.cs" />
+    <Compile Include="ViewModels\Enhancements\EnhancementCommentGridViewModel.cs" />
+    <Compile Include="ViewModels\Enhancements\EnhancementDetailViewModel.cs" />
+    <Compile Include="ViewModels\Enhancements\EnhancementEditViewModel.cs" />
+    <Compile Include="ViewModels\Enhancements\EnhancementGridViewModel.cs" />
+    <Compile Include="ViewModels\Enhancements\EnhancementMyCommentGridViewModel.cs" />
+    <Compile Include="ViewModels\Enhancements\EnhancementSearchViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\BulkFacilityTransferViewModel.cs" />
+    <Compile Include="Compositions\Address.cs" />
+    <Compile Include="Compositions\CERSGeoPoint.cs" />
+    <Compile Include="Compositions\FacilityAddress.cs" />
+    <Compile Include="Compositions\PotentialDuplicateFacility.cs" />
+    <Compile Include="Compositions\RegulatorEDTContact.cs" />
+    <Compile Include="Compositions\RegulatorFacilityOperationSubmittalElementConfig.cs" />
+    <Compile Include="Configuration\ErrorReportingConfigurationElement.cs" />
+    <Compile Include="Configuration\GlobalSettingsConfigurationElement.cs" />
+    <Compile Include="Compositions\ChemicalSearchResult.cs" />
+    <Compile Include="ErrorReport.cs" />
+    <Compile Include="ErrorReportExtended.cs" />
+    <Compile Include="IAddress.cs" />
+    <Compile Include="ICMEProgramElement.cs" />
+    <Compile Include="IEDTAccessControlEntity.cs" />
+    <Compile Include="IErrorReport.cs" />
+    <Compile Include="IErrorReportExtended.cs" />
+    <Compile Include="IModelEntityWithEDTIdentityKey.cs" />
+    <Compile Include="IRepositoryForEntityWithEDTIdentityKey.cs" />
+    <Compile Include="Model\Partials\EDTEndpointItem.cs" />
+    <Compile Include="Model\Partials\HelpItem.cs" />
+    <Compile Include="Model\Partials\DeferredProcessing.cs" />
+    <Compile Include="Model\Partials\EDTTransactionActivityLog.cs" />
+    <Compile Include="Model\Partials\EDTTransactionQueryArgument.cs" />
+    <Compile Include="Model\Partials\Error.cs" />
+    <Compile Include="Model\Partials\ErrorKeyValue.cs" />
+    <Compile Include="Model\Partials\FacilitySubmittalEDTTransaction.cs" />
+    <Compile Include="Model\Partials\FacilitySubmittalElementXml.cs" />
+    <Compile Include="Model\Partials\HWTPExtensionMethods.cs" />
+    <Compile Include="Model\Partials\LUTEDTEndpoint.cs" />
+    <Compile Include="Model\Partials\LUTEDTEndpointCategory.cs" />
+    <Compile Include="Model\Partials\LUTEDTEndpointParameter.cs" />
+    <Compile Include="Model\Partials\LUTEDTEndpointStatus.cs" />
+    <Compile Include="Model\Partials\LUTEDTTransactionMessageType.cs" />
+    <Compile Include="Model\Partials\LUTEventTypeAppliesTo.cs" />
+    <Compile Include="Model\Partials\LUTEventTypeEmailsTo.cs" />
+    <Compile Include="Model\Partials\LUTEventTypeStatus.cs" />
+    <Compile Include="Model\Partials\LUTHelpItemCategory.cs" />
+    <Compile Include="Model\Partials\LUTHelpItemStatus.cs" />
+    <Compile Include="Model\Partials\LUTHelpItemType.cs" />
+    <Compile Include="Model\Partials\LUTHelpPortalType.cs" />
+    <Compile Include="Model\Partials\LUTRegulatorDocumentType.cs" />
+    <Compile Include="Model\Partials\RegulatorEDTPermissionGroup.cs" />
+    <Compile Include="Model\Partials\RegulatorEDTTransaction.cs" />
+    <Compile Include="Plugins\IOutputStreamPlugin.cs" />
+    <Compile Include="Plugins\IPlugin.cs" />
+    <Compile Include="Plugins\OutputStreamPlugin.cs" />
+    <Compile Include="Plugins\SimplePlugin.cs" />
+    <Compile Include="Plugins\IInputOutputStreamPlugin.cs" />
+    <Compile Include="Plugins\InputOutputStreamPlugin.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\EDTEndpointRepository.cs" />
+    <Compile Include="Repository\HelpItemRepository.cs" />
+    <Compile Include="Repository\DeferredProcessingRepository.cs" />
+    <Compile Include="Repository\EDTTransactionActivityLogRepository.cs" />
+    <Compile Include="Repository\ErrorRepository.cs" />
+    <Compile Include="Repository\FacilitySubmittalEDTTransactionRepository.cs" />
+    <Compile Include="Repository\FacilitySubmittalElementXmlRepository.cs" />
+    <Compile Include="ICERSCrudableRepository.cs" />
+    <Compile Include="RepositoryNotificationReceivedEventArgs.cs" />
+    <Compile Include="Repository\RegulatorEDTTransactionRepository.cs" />
+    <Compile Include="Compositions\ChangeCUPAResult.cs" />
+    <Compile Include="Compositions\Extensions.cs" />
+    <Compile Include="Compositions\HelpRequestResult.cs" />
+    <Compile Include="Compositions\HMISPagedReport.cs" />
+    <Compile Include="Compositions\MultiRegulatorSubmittalElementItem.cs" />
+    <Compile Include="Compositions\NotificationTarget.cs" />
+    <Compile Include="Compositions\PermissionGroupItem.cs" />
+    <Compile Include="Compositions\RegulatorItem.cs" />
+    <Compile Include="Compositions\SingleRegulatorSubmittalElementItem.cs" />
+    <Compile Include="Compositions\SubmittalElementItem.cs" />
+    <Compile Include="IOrganizationStatus.cs" />
+    <Compile Include="Model\Partials\AccountOrganizationCount.cs" />
+    <Compile Include="Model\Partials\AccountOrganizationFacilityMapping.cs" />
+    <Compile Include="Model\Partials\AccountOrganizationMapping.cs" />
+    <Compile Include="Model\Partials\EmailView.cs" />
+    <Compile Include="Model\Partials\FacilityDetailExport.cs" />
+    <Compile Include="Model\Partials\ImpersonatingSignIn.cs" />
+    <Compile Include="Model\Partials\LUTOrganizationOrigin.cs" />
+    <Compile Include="Model\Partials\LUTOrganizationStatus.cs" />
+    <Compile Include="Model\Partials\RegulatorContactLastSignIn.cs" />
+    <Compile Include="Model\Partials\RegulatorRelationship.cs" />
+    <Compile Include="Model\Partials\RMOffsiteGeneratorIdentification.cs" />
+    <Compile Include="Model\Partials\TierredPermittingExensionMethods.cs" />
+    <Compile Include="Model\Partials\USTExtensionMethods.cs" />
+    <Compile Include="Model\Partials\vAccount.cs" />
+    <Compile Include="Plugins\Extensions.cs" />
+    <Compile Include="Plugins\ISimplePlugin.cs" />
+    <Compile Include="Plugins\Plugin.cs" />
+    <Compile Include="Plugins\PluginAttribute.cs" />
+    <Compile Include="Plugins\PluginDefinition.cs" />
+    <Compile Include="Plugins\PluginDefinitionSelection.cs" />
+    <Compile Include="Plugins\PluginInvoker.cs" />
+    <Compile Include="Plugins\PluginUtilities.cs" />
+    <Compile Include="Plugins\PluginNotificationEventArgs.cs" />
+    <Compile Include="Plugins\PluginProgressChangedEventArgs.cs" />
+    <Compile Include="Repository\ImpersonatingSignInRepository.cs" />
+    <Compile Include="Repository\RegulatorRelationshipRepository.cs" />
+    <Compile Include="Repository\UPDD\HWTPFinancialAssuranceRepository.cs" />
+    <Compile Include="Repository\UPDD\HWTPUnitRepository.cs" />
+    <Compile Include="Repository\UPDD\RMActivitiesReportRepository.cs" />
+    <Compile Include="Repository\UPDD\RMOffsiteGeneratorIdentificationRepository.cs" />
+    <Compile Include="Repository\UPDD\RMRecyclableMaterialRepository.cs" />
+    <Compile Include="Repository\UPDD\RWConsolidationSiteRepository.cs" />
+    <Compile Include="Repository\UPDD\HWTPFacilityRepository.cs" />
+    <Compile Include="ServiceConfiguration.cs" />
+    <Compile Include="Compositions\AccessRequest.cs" />
+    <Compile Include="Compositions\ContactRelationship.cs" />
+    <Compile Include="Compositions\ContactRelationshipCollection.cs" />
+    <Compile Include="Compositions\EntityContactAccount.cs" />
+    <Compile Include="Compositions\FacilityDeleteRequestTarget.cs" />
+    <Compile Include="Compositions\FacilityTransferRequest.cs" />
+    <Compile Include="Compositions\EventItem.cs" />
+    <Compile Include="Compositions\OrganizationAccessRequestTarget.cs" />
+    <Compile Include="Compositions\OrganizationAccount.cs" />
+    <Compile Include="Compositions\EntityContactMappingCollection.cs" />
+    <Compile Include="Compositions\EntityContactMapping.cs" />
+    <Compile Include="Compositions\RegulatorTargetEventData.cs" />
+    <Compile Include="Compositions\SubmittalEvent.cs" />
+    <Compile Include="Configuration\EmailConfigurationElement.cs" />
+    <Compile Include="CERSConstants.cs" />
+    <Compile Include="Configuration\ServiceConfigurationElement.cs" />
+    <Compile Include="Configuration\ServiceConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\ServiceExtensionsConfigurationElement.cs" />
+    <Compile Include="IContact.cs" />
+    <Compile Include="IDocumentSource.cs" />
+    <Compile Include="IEntityContact.cs" />
+    <Compile Include="IEntityWithContacts.cs" />
+    <Compile Include="IFacilitySubmittalElementResourceViewModel.cs" />
+    <Compile Include="INamedEntity.cs" />
+    <Compile Include="IParsedAddress.cs" />
+    <Compile Include="IRegulatorType.cs" />
+    <Compile Include="Model\Partials\ContactStatistic.cs" />
+    <Compile Include="Model\Partials\PermissionGroupRegulatorType.cs" />
+    <Compile Include="Model\Partials\RegulatorEqualityComparer.cs" />
+    <Compile Include="Model\Partials\Country.cs" />
+    <Compile Include="Model\Partials\ChemicalEntry.cs" />
+    <Compile Include="Model\Partials\ChemicalSearch.cs" />
+    <Compile Include="Model\Partials\CurrentFacilitySubmittalElementExtensionMethods.cs" />
+    <Compile Include="Compositions\FacilitySubmittalElementRegulator.cs" />
+    <Compile Include="Model\Partials\GuidanceMessageExtensionMethods.cs" />
+    <Compile Include="Model\Partials\OrganizationExtensionMethods.cs" />
+    <Compile Include="Model\Partials\RegulatorContactPermissionGroup.cs" />
+    <Compile Include="Model\Partials\State.cs" />
+    <Compile Include="Model\Partials\LUTEventCategory.cs" />
+    <Compile Include="Repository\ChemicalSearchRepository.cs" />
+    <Compile Include="Repository\ContactStatisticRepository.cs" />
+    <Compile Include="Repository\CountryRepository.cs" />
+    <Compile Include="Repository\PermissionGroupRegulatorTypeRepository.cs" />
+    <Compile Include="Repository\PlaceRepository.cs" />
+    <Compile Include="Repository\RegulatorContactPermissionGroupRepository.cs" />
+    <Compile Include="Repository\StateRepository.cs" />
+    <Compile Include="Security\IPermissionMatrix.cs" />
+    <Compile Include="Security\PermissionMatrix.cs" />
+    <Compile Include="IAddressInformation.cs" />
+    <Compile Include="Model\Partials\EventParameterExtensionMethods.cs" />
+    <Compile Include="DebuggingExtensions.cs" />
+    <Compile Include="ICMEDataStatus.cs" />
+    <Compile Include="LicenseKeys.cs" />
+    <Compile Include="Model\Partials\LUTCMEDataStatus.cs" />
+    <Compile Include="Repository\GuidanceMessageRepository.cs" />
+    <Compile Include="Validation\CMEBatchValidationResult.cs" />
+    <Compile Include="Validation\CMEPackageValidator.cs" />
+    <Compile Include="Validation\CMEModelEntityValidatorResult.cs" />
+    <Compile Include="Validation\CMEPackageValidationResult.cs" />
+    <Compile Include="Validation\CMEResourceInventoryItem.cs" />
+    <Compile Include="Validation\CMEResourceInventoryItemCollection.cs" />
+    <Compile Include="Validation\CMEPackage.cs" />
+    <Compile Include="Validation\DataRegistryValidationResult.cs" />
+    <Compile Include="FacilitySubmittalElementResourceEntityAttribute.cs" />
+    <Compile Include="ICMEHistoryModelEntity.cs" />
+    <Compile Include="IEventType.cs" />
+    <Compile Include="FacilitySubmittalElementResourceValidatorAttribute.cs" />
+    <Compile Include="Model\Partials\GuidanceMessage.cs" />
+    <Compile Include="Model\Partials\RegulatorSubmittalElementLocalRequirement.cs" />
+    <Compile Include="Repository\CMEBatchRepository.cs" />
+    <Compile Include="Repository\RegulatorSubmittalElementLocalRequirementsRepository.cs" />
+    <Compile Include="Validation\DDModelEntityValidationResult.cs" />
+    <Compile Include="Validation\EntityValidatorResult.cs" />
+    <Compile Include="Validation\FacilitySubmittalElementResourceDocumentValidationResult.cs" />
+    <Compile Include="Validation\Model\EnforcementViolationValidator.cs" />
+    <Compile Include="Validation\Model\RMOffsiteGeneratorIdentificationValidator.cs" />
+    <Compile Include="Validation\PasswordValidatorAttribute.cs" />
+    <Compile Include="Validation\ResourceInventoryItem.cs" />
+    <Compile Include="Validation\FacilitySubmittalElementResourceValidationResult.cs" />
+    <Compile Include="Validation\FacilitySubmittalElementResourceValidationResultExtensions.cs" />
+    <Compile Include="Validation\FacilitySubmittalElementValidatorResult.cs" />
+    <Compile Include="Validation\ICMEModelEntityValidator.cs" />
+    <Compile Include="Validation\ICMEModelEntityValidationResult.cs" />
+    <Compile Include="Validation\IDDModelEntityValidationResult.cs" />
+    <Compile Include="Validation\IEntityValidator.cs" />
+    <Compile Include="Validation\IEntityValidationResult.cs" />
+    <Compile Include="Validation\IFacilitySubmittalElementResourceValidationResult.cs" />
+    <Compile Include="Validation\IFacilitySubmittalElementResourceValidator.cs" />
+    <Compile Include="Model\Partials\EmailTemplate.cs" />
+    <Compile Include="Model\Partials\Email.cs" />
+    <Compile Include="Model\Partials\Event.cs" />
+    <Compile Include="Model\Partials\EventParameter.cs" />
+    <Compile Include="Model\Partials\EventType.cs" />
+    <Compile Include="Model\Partials\LUTEmailStatus.cs" />
+    <Compile Include="Model\Partials\LUTEventDeliveryMechanism.cs" />
+    <Compile Include="Model\Partials\LUTEventPriority.cs" />
+    <Compile Include="Model\Partials\Notification.cs" />
+    <Compile Include="Model\Partials\NotificationTemplate.cs" />
+    <Compile Include="Model\Partials\ViolationProgramElement.cs" />
+    <Compile Include="Model\Partials\ViolationSource.cs" />
+    <Compile Include="Model\Partials\CERSFacilityGeoPoint.cs" />
+    <Compile Include="Model\Partials\FacilitySubmittalElementResourceExtensionMethods.cs" />
+    <Compile Include="Validation\IFacilitySubmittalElementValidationResult.cs" />
+    <Compile Include="Validation\Model\BPFacilityChemicalValidator.cs" />
+    <Compile Include="Repository\CERSFacilityGeoPointRepository.cs" />
+    <Compile Include="Repository\EmailRepository.cs" />
+    <Compile Include="Repository\EmailTemplateRepository.cs" />
+    <Compile Include="Repository\EventParameterRepository.cs" />
+    <Compile Include="Repository\EventRepository.cs" />
+    <Compile Include="Repository\EventTypeRepository.cs" />
+    <Compile Include="Repository\NotificationTemplateRepository.cs" />
+    <Compile Include="Repository\NotificationRepository.cs" />
+    <Compile Include="Repository\ViolationCitationRepository.cs" />
+    <Compile Include="Repository\ViolationProgramElementRepository.cs" />
+    <Compile Include="Repository\ViolationSourceRepository.cs" />
+    <Compile Include="Security\ExtensionMethods.cs" />
+    <Compile Include="TranslationExtensionMethods.cs" />
+    <Compile Include="Validation\CMEModelEntityValidator.cs" />
+    <Compile Include="Validation\FacilitySubmittalElementResourceValidator.cs" />
+    <Compile Include="Validation\EntityValidator.cs" />
+    <Compile Include="DataRegistryDataSourceSetting.cs" />
+    <Compile Include="DataRegistry.cs" />
+    <Compile Include="DataRegistryDataSourceSettingExtensions.cs" />
+    <Compile Include="Configuration\CDRConfigurationElement.cs" />
+    <Compile Include="Configuration\CDRDataSourceConfigurationElement.cs" />
+    <Compile Include="Configuration\CDRDataSourceConfigurationElementCollection.cs" />
+    <Compile Include="DataRegistryMetadataAttribute.cs" />
+    <Compile Include="Validation\IFacilitySubmittalElementResourceDocumentValidator.cs" />
+    <Compile Include="Guidance\EntityGuidanceMessage.cs" />
+    <Compile Include="Guidance\EntityGuidanceMessageCollection.cs" />
+    <Compile Include="DDModelValidatorAttribute.cs" />
+    <Compile Include="Guidance\GuidanceMessageTemplateCollection.cs" />
+    <Compile Include="GuidanceMessageTemplates.cs" />
+    <Compile Include="ICMEModelEntity.cs" />
+    <Compile Include="Guidance\IEntityGuidanceMessage.cs" />
+    <Compile Include="Guidance\IEntityGuidance.cs" />
+    <Compile Include="Validation\IFacilitySubmittalElementValidator.cs" />
+    <Compile Include="IDocumentFormat.cs" />
+    <Compile Include="IDocumentStorageProvider.cs" />
+    <Compile Include="IDocumentType.cs" />
+    <Compile Include="IFacilitySubmittalModelEntity.cs" />
+    <Compile Include="Guidance\IGuidanceMessageTemplate.cs" />
+    <Compile Include="IXmlSchemaMetadata.cs" />
+    <Compile Include="ModelValidationExtensionMethods.cs" />
+    <Compile Include="Model\Partials\CMEProgramElement.cs" />
+    <Compile Include="Model\Partials\FacilityExtensionMethods.cs" />
+    <Compile Include="Model\Partials\FacilityRegulatorSubmittalElementExtensionMethods.cs" />
+    <Compile Include="Model\Partials\FacilitySubmittalElementResourceDocument.cs" />
+    <Compile Include="Model\Partials\PlaceZipCode.cs" />
+    <Compile Include="Model\Partials\FacilitySubmittalElementExtensionMethods.cs" />
+    <Compile Include="Model\Partials\Place.cs" />
+    <Compile Include="Model\Partials\LUTDocumentSource.cs" />
+    <Compile Include="Validation\Model\FacilitySubmittalElementDocumentValidator.cs" />
+    <Compile Include="Validation\FacilitySubmittalElementResourceDocumentValidator.cs" />
+    <Compile Include="Repository\CMEProgramElementRepository.cs" />
+    <Compile Include="Repository\FacilitySubmittalElementResourceDocumentRepository.cs" />
+    <Compile Include="UPDDViewModelData.cs" />
+    <Compile Include="Validation\ResourceInventoryItemCollection.cs" />
+    <Compile Include="Validation\SubmittalElementResource\GenericResourceValidator.cs" />
+    <Compile Include="Validation\SubmittalElement\HazardousWasteTankClosureCertificationValidator.cs" />
+    <Compile Include="Validation\Validator.cs" />
+    <Compile Include="Validation\ValidatorFactory.cs" />
+    <Compile Include="ViewModels\AccountInformationViewModel.cs" />
+    <Compile Include="ViewModels\AccountManagement\AccountActivationViewModel.cs" />
+    <Compile Include="ViewModels\AccountManagement\AccountChangePasswordViewModel.cs" />
+    <Compile Include="ViewModels\AccountManagement\AccountProfileActionViewModel.cs" />
+    <Compile Include="ViewModels\AccountManagement\AccountRegisterViewModel.cs" />
+    <Compile Include="ViewModels\AccountManagement\AccountStatusViewModel.cs" />
+    <Compile Include="ViewModels\AccountManagement\EntityContactUpdateResultViewModel.cs" />
+    <Compile Include="ViewModels\AccountManagement\LookupEntityContactByAccountViewModel.cs" />
+    <Compile Include="ViewModels\AccountManagement\MyAccountViewModel.cs" />
+    <Compile Include="ViewModels\AccountManagement\ResetPasswordViewModel.cs" />
+    <Compile Include="ViewModels\AccessRequestProcessViewModel.cs" />
+    <Compile Include="ViewModels\AccountOrganizationReportViewModel.cs" />
+    <Compile Include="ViewModels\ActionRequiredViewArgs.cs" />
+    <Compile Include="ViewModels\AlertNotificationsViewArgs.cs" />
+    <Compile Include="ViewModels\CERSHelpItemGridView.cs" />
+    <Compile Include="ViewModels\CERSHelpItemViewModel.cs" />
+    <Compile Include="ViewModels\CERSPublicHelpItemGridView.cs" />
+    <Compile Include="ViewModels\CheckablePermissionGroup.cs" />
+    <Compile Include="ViewModels\ContextualWrapperViewModel.cs" />
+    <Compile Include="ViewModels\EDT\EDTTransactionGridViewModel.cs" />
+    <Compile Include="ViewModels\EDT\EDTViewModel.cs" />
+    <Compile Include="ViewModels\EDT\EntityEDTViewModel.cs" />
+    <Compile Include="ViewModels\EmailTemplateGridViewModel.cs" />
+    <Compile Include="ViewModels\EmailTemplateViewModel.cs" />
+    <Compile Include="ViewModels\Enforcements\EnforcementDataDownloadGridViewModel.cs" />
+    <Compile Include="ViewModels\EventViewArgs.cs" />
+    <Compile Include="ViewModels\Facilities\BusinessHomeFacilityListingGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\DuplicateFacilityGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalEDTGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalElementSimpleGridViewModel.cs" />
+    <Compile Include="ViewModels\FacilityManagement\FacilityDeleteViewModel.cs" />
+    <Compile Include="ViewModels\FacilityManagement\FacilityMergeViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilityRegulatorSubmittalElementGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilityReportingRequirementViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalElementDraftReplacedBySeedingGridViewModel.cs" />
+    <Compile Include="ViewModels\FacilityManagement\FacilityTransferHistoryGridViewModel.cs" />
+    <Compile Include="ViewModels\FacilityManagement\FacilityTransferViewModel.cs" />
+    <Compile Include="ViewModels\FacilityManagement\FacilityViewModelBase.cs" />
+    <Compile Include="ViewModels\FacilityManagement\IFacilityEventViewModel.cs" />
+    <Compile Include="ViewModels\FacilityManagement\AddFacilityWizardViewModel.cs" />
+    <Compile Include="ViewModels\FacilityManagement\PotentialDuplicateFacilityGridViewModel.cs" />
+    <Compile Include="ViewModels\FacilityManageViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalPreparationMenuViewModel.cs" />
+    <Compile Include="ViewModels\FacilityMapViewModel.cs" />
+    <Compile Include="ViewModels\FacilityManagement\FacilityTransferRequestViewModel.cs" />
+    <Compile Include="ViewModels\GuidanceMessages\FacilitySubmittalGuidanceMessageViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\EmailDetailViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\FieldHelpViewModel.cs" />
+    <Compile Include="ViewModels\GuidanceMessages\GuidanceMessageTemplateGridViewModel.cs" />
+    <Compile Include="ViewModels\GuidanceMessages\GuidanceMessageTemplateViewModel.cs" />
+    <Compile Include="ViewModels\HelpRequestViewModel.cs" />
+    <Compile Include="ViewModels\Chemicals\BPFacilityChemicalGridViewModel.cs" />
+    <Compile Include="ViewModels\Chemicals\ChemicalGridViewModel.cs" />
+    <Compile Include="ViewModels\Chemicals\ChemicalLibraryEntryGridViewModel.cs" />
+    <Compile Include="ViewModels\Chemicals\ChemicalLibrarySearchResultGridViewModel.cs" />
+    <Compile Include="ViewModels\Chemicals\ChemicalSynonymGridViewModel.cs" />
+    <Compile Include="ViewModels\Chemicals\ChemicalViewModel.cs" />
+    <Compile Include="ViewModels\Chemicals\FSERBPFacilityChemicalViewModel.cs" />
+    <Compile Include="ViewModels\Chemicals\HazardousMaterialInventoryViewModel.cs" />
+    <Compile Include="ViewModels\Chemicals\HMISReportViewModel.cs" />
+    <Compile Include="ViewModels\Contacts\EntityContactGridViewModel.cs" />
+    <Compile Include="ViewModels\Contacts\EntityContactViewModel.cs" />
+    <Compile Include="ViewModels\DocumentUploadViewModel.cs" />
+    <Compile Include="ViewModels\EmailGridViewItem.cs" />
+    <Compile Include="ViewModels\EmailViewModel.cs" />
+    <Compile Include="ViewModels\EventLinkForwarderViewModel.cs" />
+    <Compile Include="ViewModels\EventTypeGridViewModel.cs" />
+    <Compile Include="ViewModels\EventTypeViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalElementDocumentGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalElementDocumentViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalElementGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalElementNotApplicableConfirmationViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalElementResourceDocumentGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalElementResourceDocumentViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalElementResourceGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalElementResourceViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalElementViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilitySubmittalViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\WashedAddressGridViewModel.cs" />
+    <Compile Include="ViewModels\FacilitySubmittalElementResourceViewModel.cs" />
+    <Compile Include="ViewModels\FacilitySubmittalElementViewModel.cs" />
+    <Compile Include="ViewModels\GetStartedViewModel.cs" />
+    <Compile Include="ViewModels\GridViewModelExtensionMethods.cs" />
+    <Compile Include="ViewModels\GuidanceMessages\GuidanceMessageExportViewModel.cs" />
+    <Compile Include="ViewModels\GuidanceMessages\GuidanceMessageGridViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\Surveys\SurveyResponseDetailReportViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\Surveys\SurveyResponseReportViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\Surveys\SurveyResponseStatisticsViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\Surveys\SurveyViewModel.cs" />
+    <Compile Include="ViewModels\Inspections\InspectionDataDownloadGridViewModel.cs" />
+    <Compile Include="ViewModels\MappingDataViewModel.cs" />
+    <Compile Include="ViewModels\NameChangeResultViewModel.cs" />
+    <Compile Include="ViewModels\EventGridViewModel.cs" />
+    <Compile Include="ViewModels\NewFacilitiesReportViewModel.cs" />
+    <Compile Include="ViewModels\NewFacilityGridViewModel.cs" />
+    <Compile Include="ViewModels\NotificationTemplateGridViewModel.cs" />
+    <Compile Include="ViewModels\NotificationTemplateViewModel.cs" />
+    <Compile Include="ViewModels\OrganizationAccessRequestGridViewModel.cs" />
+    <Compile Include="ViewModels\OrganizationManagement\OrganizationAccessRequestViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationFacInfoUploadViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationInventoryUploadViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationReportViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationsListExportViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationToolsRegulatorsViewModel.cs" />
+    <Compile Include="ViewModels\Infrastructure\Security\RoleGridViewModel.cs" />
+    <Compile Include="ViewModels\ProcessEventAsyncResult.cs" />
+    <Compile Include="ViewModels\ProcessEventViewModel.cs" />
+    <Compile Include="ViewModels\PublicStatisticsViewModel.cs" />
+    <Compile Include="ViewModels\RegulatorLocalRequirementsReportViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorRegisterViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorReportViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorZipCodeSubmittalElementMappingSummaryGridViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorZipCodeSubmittalElementMappingSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Reports\AdditionalCriteriaGridViewModel.cs" />
+    <Compile Include="ViewModels\Reports\InventorySearchResultGridViewModel.cs" />
+    <Compile Include="ViewModels\Reports\CUPAElectronicReportingStatusReportGridViewModel.cs" />
+    <Compile Include="ViewModels\Reports\CUPAElectronicReportingStatusReportViewModel.cs" />
+    <Compile Include="ViewModels\RequestAccessToRegulatorViewModel.cs" />
+    <Compile Include="ViewModels\CERSStatisticsViewModel.cs" />
+    <Compile Include="ViewModels\Responder\DOTHazardSummaryViewModel.cs" />
+    <Compile Include="ViewModels\Responder\ResponderViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElements\SubmittalElementRegulatorGridViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElements\SubmittalElementResourceViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElements\SubmittalEventExportViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElements\SubmittalEventViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElements\SubmittalFinishedViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElements\SubmittalStartLandingViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElements\CurrentFacilitySubmittalViewModel.cs" />
+    <Compile Include="ViewModels\GuidanceMessages\EntityGuidanceMessageViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElements\SubmittalStartViewModel.cs" />
+    <Compile Include="ViewModels\SystemAdmin\AccountPasswordRecoveryViewModel.cs" />
+    <Compile Include="ViewModels\SystemAdmin\ControlPanelViewModel.cs" />
+    <Compile Include="ViewModels\SystemAdmin\HomeViewModel.cs" />
+    <Compile Include="ViewModels\UndergroundStorageTanks\USTTankInfoViewModel.cs" />
+    <Compile Include="ViewModels\UndergroundStorageTanks\USTTankInfoGridViewModel.cs" />
+    <Compile Include="ViewModels\UndergroundStorageTanks\USTFacilityInfoBOESearchGridViewModel.cs" />
+    <Compile Include="ViewModels\UndergroundStorageTanks\USTFacilityInfoDataDownloadGridViewModel.cs" />
+    <Compile Include="ViewModels\UndergroundStorageTanks\USTInstallModCertDataDownloadGridViewModel.cs" />
+    <Compile Include="ViewModels\UndergroundStorageTanks\USTMonitoringPlanGridViewModel.cs" />
+    <Compile Include="ViewModels\UndergroundStorageTanks\USTMonitoringPlanViewModel.cs" />
+    <Compile Include="ViewModels\UndergroundStorageTanks\USTTankInfoMonitoringPlanDataDownloadGridViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelConfigurationContainer.cs" />
+    <Compile Include="ViewModels\Violations\ViolationCitationGridViewModel.cs" />
+    <Compile Include="ViewModels\Violations\ViolationCitationViewModel.cs" />
+    <Compile Include="ViewModels\Violations\ViolationDataDownloadGridViewModel.cs" />
+    <Compile Include="ViewModels\Violations\ViolationGridViewModel.cs" />
+    <Compile Include="ViewModels\Violations\ViolationTypeGridViewModel.cs" />
+    <Compile Include="ViewModels\Violations\ViolationTypeViewModel.cs" />
+    <Compile Include="ViewModels\Violations\ViolationViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\WashedAddress.cs" />
+    <Compile Include="ViewModels\ZipCodeViewModel.cs" />
+    <Compile Include="Xml\ActionItems\RegulatorActionItemQueryXmlSerializer.cs" />
+    <Compile Include="Xml\CME\CMESubmittalResponseFromXml.cs" />
+    <Compile Include="Xml\CME\CMESubmittalResponseToXml.cs" />
+    <Compile Include="Xml\CME\CMESubmittalResponseXmlDeserializer.cs" />
+    <Compile Include="Xml\CME\EDTTransactionToCMEPackage.cs" />
+    <Compile Include="Xml\CME\CMEExcelInputStreamToXml.cs" />
+    <Compile Include="Xml\CME\CMESubmittalQueryXmlSerializer.cs" />
+    <Compile Include="Xml\CME\CMESubmittalQueryXmlSerializerStatisticEventArgs.cs" />
+    <Compile Include="Xml\CME\CMESubmittalXmlDeserializer.cs" />
+    <Compile Include="Xml\CME\ToXmlExtensionMethods.cs" />
+    <Compile Include="Xml\EndpointMetadataXmlSerializer.cs" />
+    <Compile Include="Xml\EntityDeserializationResult.cs" />
+    <Compile Include="Xml\FacilityManagement\RegulatorFacilityCreateXmlSerializer.cs" />
+    <Compile Include="Xml\FacilityManagement\RegulatorFacilityCreateResponseXmlSerializer.cs" />
+    <Compile Include="Xml\FacilityManagement\RegulatorFacilityMetadataResponseXmlSerializer.cs" />
+    <Compile Include="Xml\FacilityManagement\RegulatorFacilityMetadataXmlSerializer.cs" />
+    <Compile Include="Xml\FacilityQuery\RegulatorFacilityQueryXmlSerializer.cs" />
+    <Compile Include="Xml\FacilityQuery\RegulatorFacilityTransferQueryXmlSerializer.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalXmlGenerator.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalXmlSerializer_APSA.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalXmlSerializer_ERTP.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalXmlSerializer_HWTCC.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalXmlSerializer_RMR.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalXmlSerializer_RWCSAN.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalXmlSerializer.cs" />
+    <Compile Include="Xml\Extensions.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalXmlSerializer_FI.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalXmlSerializer_HMI.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalXmlSerializer_TP.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalXmlSerializer_UST.cs" />
+    <Compile Include="Xml\OrganizationQuery\RegulatorOrganizationQueryXmlSerializer.cs" />
+    <Compile Include="Xml\StorageObjects\FacilityRegulatorSubmittalElementXmlObject.cs" />
+    <Compile Include="Compositions\FacilityOperationMessage.cs" />
+    <Compile Include="Compositions\FacilityCreatePackage.cs" />
+    <Compile Include="Xml\StorageObjects\RegulatorFacilitySubmittalPacket.cs" />
+    <Compile Include="Xml\StorageObjects\FacilitySubmittalElementPacket.cs" />
+    <Compile Include="Xml\StorageObjects\RegulatorFacilitySubmittalElementHeaderXmlObject.cs" />
+    <Compile Include="Xml\StorageObjects\RegulatorXmlObjectCollectionPackage.cs" />
+    <Compile Include="Xml\StorageObjects\RegulatorSubmittalElementActionNotification.cs" />
+    <Compile Include="Xml\FacilitySubmittal\FacilitySubmittalQueryXmlSerializerStatisticEventArgs.cs" />
+    <Compile Include="TimedCodeBlockCallbackInvoker.cs" />
+    <Compile Include="Xml\IEntityDeserializationResult.cs" />
+    <Compile Include="Xml\IXmlSerializer.cs" />
+    <Compile Include="Xml\StorageObjects\RegulatorXmlObjectPacket.cs" />
+    <Compile Include="Xml\ToXmlExtensionMethods.cs" />
+    <Compile Include="Xml\XmlSchemaCollection.cs" />
+    <Compile Include="Model\Partials\EDTTransactionMessage.cs" />
+    <Compile Include="Model\Partials\GuidanceMessageTemplate.cs" />
+    <Compile Include="IResourceType.cs" />
+    <Compile Include="Model\Partials\ModelEntityGuidanceMetaData.cs" />
+    <Compile Include="Model\Partials\LUTDocumentStorageProvider.cs" />
+    <Compile Include="Model\Partials\LUTProp65Type.cs" />
+    <Compile Include="Model\Partials\LUTReportingRequirement.cs" />
+    <Compile Include="Model\Partials\LUTXmlSchema.cs" />
+    <Compile Include="Model\Partials\RWConsolidationSite.cs" />
+    <Compile Include="Model\Partials\RMRecyclableMaterial.cs" />
+    <Compile Include="Model\Partials\RMActivitiesReport.cs" />
+    <Compile Include="Model\Partials\HWTPFinancialAssurance.cs" />
+    <Compile Include="Validation\SubmittalElementResource\HazardousMaterialInventoryResourceValidator.cs" />
+    <Compile Include="Validation\Model\BPOwnerOperatorValidator.cs" />
+    <Compile Include="Validation\Model\EnforcementValidator.cs" />
+    <Compile Include="Model\Partials\ChemicalSynonym.cs" />
+    <Compile Include="IDDModelEntity.cs" />
+    <Compile Include="Model\Partials\BPFacilityChemical.cs" />
+    <Compile Include="Model\Partials\BPOwnerOperator.cs" />
+    <Compile Include="Model\Partials\BPActivity.cs" />
+    <Compile Include="Model\Partials\Chemical.cs" />
+    <Compile Include="Model\Partials\FacilityRegulatorSubmittalElement.cs" />
+    <Compile Include="Model\Partials\FacilitySubmittal.cs" />
+    <Compile Include="Model\Partials\FacilitySubmittalElement.cs" />
+    <Compile Include="Model\Partials\FacilitySubmittalElementResource.cs" />
+    <Compile Include="Model\Partials\LUTSubmittalElementStatus.cs" />
+    <Compile Include="Model\Partials\OrganizationContactPermissionGroup.cs" />
+    <Compile Include="Model\Partials\Setting.cs" />
+    <Compile Include="Model\Partials\SubmittalElement.cs" />
+    <Compile Include="Model\Partials\EnforcementHistory.cs" />
+    <Compile Include="Model\Partials\EnforcementViolation.cs" />
+    <Compile Include="Model\Partials\HWTPFacility.cs" />
+    <Compile Include="Model\Partials\HWTPUnit.cs" />
+    <Compile Include="Model\Partials\InspectionHistory.cs" />
+    <Compile Include="Model\Partials\USTFacilityInfo.cs" />
+    <Compile Include="Model\Partials\USTInstallModCert.cs" />
+    <Compile Include="Model\Partials\USTMonitoringPlan.cs" />
+    <Compile Include="Model\Partials\USTTankInfo.cs" />
+    <Compile Include="Model\Partials\ViolationHistory.cs" />
+    <Compile Include="Validation\Model\RWConsolidationSiteValidator.cs" />
+    <Compile Include="Validation\Model\RMRecyclableMaterialValidator.cs" />
+    <Compile Include="Validation\Model\RMActivitiesReportValidator.cs" />
+    <Compile Include="Validation\Model\HWTPFacilityValidator.cs" />
+    <Compile Include="Validation\Model\HWTPFinancialAssuranceValidator.cs" />
+    <Compile Include="Validation\Model\HWTPUnitValidator.cs" />
+    <Compile Include="Validation\Model\USTFacilityInfoValidator.cs" />
+    <Compile Include="Validation\Model\USTInstallModCertValidator.cs" />
+    <Compile Include="Validation\Model\USTMonitoringPlanValidator.cs" />
+    <Compile Include="Validation\Model\ViolationValidator.cs" />
+    <Compile Include="Model\Partials\ZipCode.cs" />
+    <Compile Include="Repository\EDTTransactionMessageRepository.cs" />
+    <Compile Include="Repository\GuidanceMessageTemplateRepository.cs" />
+    <Compile Include="Repository\UPDD\BPActivityRepository.cs" />
+    <Compile Include="Repository\UPDD\BPFacilityChemicalRepository.cs" />
+    <Compile Include="Repository\UPDD\BPOwnerOperatorRepository.cs" />
+    <Compile Include="Repository\ChemicalRepository.cs" />
+    <Compile Include="Repository\ChemicalSynonymRepository.cs" />
+    <Compile Include="Repository\CountyRepository.cs" />
+    <Compile Include="Repository\EDTTransactionRepository.cs" />
+    <Compile Include="Repository\UPDD\EnforcementHistoryRepository.cs" />
+    <Compile Include="Repository\UPDD\EnforcementViolationRepository.cs" />
+    <Compile Include="Repository\EntityDataRepositoryBase.cs" />
+    <Compile Include="Repository\FacilityRegulatorSubmittalElementRepository.cs" />
+    <Compile Include="Repository\FacilitySubmittalElementDocumentRepository.cs" />
+    <Compile Include="Repository\FacilitySubmittalElementRepository.cs" />
+    <Compile Include="Repository\FacilitySubmittalElementResourceRepository.cs" />
+    <Compile Include="Repository\FacilitySubmittalRepository.cs" />
+    <Compile Include="Repository\UPDD\InspectionHistoryRepository.cs" />
+    <Compile Include="Repository\NewsItemRepository.cs" />
+    <Compile Include="Repository\OrganizationContactPermissionGroupRepository.cs" />
+    <Compile Include="Repository\SettingRepository.cs" />
+    <Compile Include="Repository\UPDD\USTFacilityInfoRepository.cs" />
+    <Compile Include="Repository\UPDD\USTInstallModCertRepository.cs" />
+    <Compile Include="Repository\UPDD\USTMonitoringPlanRepository.cs" />
+    <Compile Include="Repository\UPDD\USTTankInfoRepository.cs" />
+    <Compile Include="Repository\UPDD\ViolationHistoryRepository.cs" />
+    <Compile Include="Validation\FacilitySubmittalElementValidator.cs" />
+    <Compile Include="Repository\XmlSchemaRepository.cs" />
+    <Compile Include="Validation\SubmittalElement\AboveGroundStorageTanksValidator.cs" />
+    <Compile Include="Validation\SubmittalElement\CaliforniaAccidentalReleaseProgramValidator.cs" />
+    <Compile Include="Validation\SubmittalElement\RecyclableMaterialsReportValidator.cs" />
+    <Compile Include="Validation\SubmittalElement\RemoteWasteConsolidationsAnnualNotificationValidator.cs" />
+    <Compile Include="FacilitySubmittalElementValidatorAttribute.cs" />
+    <Compile Include="Model\Partials\SystemLookupEntity.cs" />
+    <Compile Include="Configuration\CERSConfigurationSection.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="Model\Partials\CMEBatch.cs" />
+    <Compile Include="Model\Partials\EDTTransaction.cs" />
+    <Compile Include="Model\Partials\Enforcement.cs" />
+    <Compile Include="Model\Partials\EntityDocumentMetaData.cs" />
+    <Compile Include="Model\Partials\FacilitySubmittalElementDocument.cs" />
+    <Compile Include="Model\Partials\Inspection.cs" />
+    <Compile Include="Model\Partials\LUTContext.cs" />
+    <Compile Include="Model\Partials\LUTQualifier.cs" />
+    <Compile Include="Model\Partials\OrganizationDocument.cs" />
+    <Compile Include="Model\Partials\SubmittalElementTemplate.cs" />
+    <Compile Include="Model\Partials\SubmittalElementTemplateResource.cs" />
+    <Compile Include="Model\Partials\Violation.cs" />
+    <Compile Include="Model\Partials\ViolationCategory.cs" />
+    <Compile Include="Model\Partials\ViolationCitation.cs" />
+    <Compile Include="Model\Partials\ViolationType.cs" />
+    <Compile Include="Repository\CersCrudableRepositoryBaseTModel.cs" />
+    <Compile Include="Repository\ContactRespository.cs" />
+    <Compile Include="Repository\DocumentRepository.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="Repository\UPDD\EnforcementRepository.cs" />
+    <Compile Include="Repository\FacilityRepository.cs" />
+    <Compile Include="ISystemLookupEntity.cs" />
+    <Compile Include="Repository\UPDD\InspectionRepository.cs" />
+    <Compile Include="Repository\SystemLookupTableRepository.cs" />
+    <Compile Include="ModelEntityExtensionMethods.cs" />
+    <Compile Include="Model\Partials\Document.cs" />
+    <Compile Include="Model\Partials\LUTDocumentType.cs" />
+    <Compile Include="Model\Partials\LUTGuidanceLevel.cs" />
+    <Compile Include="Model\Partials\LUTPermissionRole.cs" />
+    <Compile Include="Model\Partials\County.cs" />
+    <Compile Include="Model\Partials\LUTDocumentFormat.cs" />
+    <Compile Include="Model\Partials\LUTRegulatorType.cs" />
+    <Compile Include="Model\Partials\LUTResourceType.cs" />
+    <Compile Include="Model\Partials\PermissionGroup.cs" />
+    <Compile Include="Model\Partials\Regulator.cs" />
+    <Compile Include="Model\Partials\RegulatorContactSecurityGroup.cs" />
+    <Compile Include="Model\Partials\RegulatorContactSecurityRole.cs" />
+    <Compile Include="Model\Partials\RegulatorDocument.cs" />
+    <Compile Include="Model\Partials\RegulatorZipCodeSubmittalElement.cs" />
+    <Compile Include="Repository\OrganizationDocumentRepository.cs" />
+    <Compile Include="Repository\OrganizationRepository.cs" />
+    <Compile Include="Repository\PermissionGroupRepository.cs" />
+    <Compile Include="Model\Partials\PermissionGroupRole.cs" />
+    <Compile Include="Repository\PermissionGroupRoleRepository.cs" />
+    <Compile Include="Repository\RegulatorDocumentRepository.cs" />
+    <Compile Include="Repository\RegulatorZipCodeSubmittalElementRepository.cs" />
+    <Compile Include="Repository\SubmittalElementTemplateRepository.cs" />
+    <Compile Include="Repository\SubmittalElementTemplateResourceRepository.cs" />
+    <Compile Include="Repository\ViolationCategoryRepository.cs" />
+    <Compile Include="Repository\UPDD\ViolationRepository.cs" />
+    <Compile Include="Repository\ViolationTypeRepository.cs" />
+    <Compile Include="Security\PermissionGroupMatrix.cs" />
+    <Compile Include="Security\PermissionGroupMatrixCollection.cs" />
+    <Compile Include="Security\IPermissionGroupMatrix.cs" />
+    <Compile Include="Security\IPermissionRoleMatrix.cs" />
+    <Compile Include="Security\PermissionRoleMatrix.cs" />
+    <Compile Include="Security\PermissionRoleMatrixCollection.cs" />
+    <Compile Include="Repository\SubmittalElementRepository.cs" />
+    <Compile Include="SystemViewModelData.cs" />
+    <Compile Include="Validation\Model\BPActivityValidator.cs" />
+    <Compile Include="Validation\IDDModelEntityValidator.cs" />
+    <Compile Include="Validation\DDModelEntityValidator.cs" />
+    <Compile Include="Validation\Model\InspectionValidator.cs" />
+    <Compile Include="Validation\SubmittalElement\OnsiteHazardousWasteTreatmentNotificationValidator.cs" />
+    <Compile Include="Validation\SubmittalElement\EmergencyResponseAndTrainingPlansValidator.cs" />
+    <Compile Include="Validation\SubmittalElement\FacilityInformationValidator.cs" />
+    <Compile Include="Validation\SubmittalElement\HazardousMaterialsInventoryValidator.cs" />
+    <Compile Include="ViewModels\Contacts\ContactGridViewModel.cs" />
+    <Compile Include="ViewModels\Contacts\ContactViewModel.cs" />
+    <Compile Include="ViewModels\DocumentGridViewModel.cs" />
+    <Compile Include="ViewModels\Enforcements\EnforcementGridViewModel.cs" />
+    <Compile Include="ViewModels\Enforcements\EnforcementViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilityGridViewModel.cs" />
+    <Compile Include="ViewModels\Facilities\FacilityViewModel.cs" />
+    <Compile Include="ViewModels\Inspections\InspectionGridViewModel.cs" />
+    <Compile Include="ViewModels\Inspections\InspectionViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationContactGridViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationContactViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationDocumentGridViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationDocumentViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationGridViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationPickerViewModel.cs" />
+    <Compile Include="ViewModels\Organizations\OrganizationViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorDocumentGridViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorDocumentViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorGridViewModel.cs" />
+    <Compile Include="Model\Partials\CERSEntities.cs" />
+    <Compile Include="Model\Partials\Contact.cs" />
+    <Compile Include="Model\Partials\Facility.cs" />
+    <Compile Include="Model\Partials\NewsItem.cs" />
+    <Compile Include="Model\Partials\Organization.cs" />
+    <Compile Include="Model\Partials\OrganizationContact.cs" />
+    <Compile Include="Model\Partials\RegulatorContact.cs" />
+    <Compile Include="Repository\OrganizationContactRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\RegulatorContactRepository.cs" />
+    <Compile Include="Repository\RegulatorRepository.cs" />
+    <Compile Include="Repository\CersRepositoryBase.cs" />
+    <Compile Include="Validation\SubmittalElement\UndergroundStorageTanksValidator.cs" />
+    <Compile Include="Validation\Model\USTTankInfoValidator.cs" />
+    <Compile Include="GridViewTransformationExtensionMethods.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorContactGridViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorContactViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorHomeViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorLocalGridViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorLocalViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorRegisterWizardViewModelOld.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorZipSubmittalGridViewModel.cs" />
+    <Compile Include="ViewModels\Regulators\RegulatorZipSubmittalViewModel.cs" />
+    <Compile Include="ViewModels\SignInViewModel.cs" />
+    <Compile Include="ViewModels\SignInWizardViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElementTemplates\SubmittalElementTemplateResourceGridViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElementTemplates\SubmittalElementTemplateResourceViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElementTemplates\SubmittalElementTemplateViewModel.cs" />
+    <Compile Include="ViewModels\SubmittalElementTemplates\SubmittalElementTemplateGridViewModel.cs" />
+    <Compile Include="ViewModels\SystemAdmin\AccountGridViewModel.cs" />
+    <Compile Include="ViewModels\SystemAdmin\UserViewModel.cs" />
+    <Compile Include="Repository\ZipCodeRepository.cs" />
+    <Compile Include="Xml\CME\CMESubmittalResponseXmlSerializer.cs" />
+    <Compile Include="Xml\CME\CMESubmittalFromXml.cs" />
+    <Compile Include="Xml\CME\CMESubmittalXmlSerializer.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalActionNotificationXmlSerializer.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalQueryXmlSerializer.cs" />
+    <Compile Include="Xml\FacilitySubmittal\RegulatorFacilitySubmittalResponseXmlSerializer.cs" />
+    <Compile Include="Xml\FacilitySubmittal\FacilitySubmittalXmlSerializer.cs" />
+    <Compile Include="Xml\LibraryToXmlExtensionMethods.cs" />
+    <Compile Include="Xml\FacilitySubmittal\SubmittalElementXmlHeader.cs" />
+    <Compile Include="Xml\XmlBindingExtensionMethods.cs" />
+    <Compile Include="Xml\FacilitySubmittal\FacilitySubmittalFromXml.cs" />
+    <Compile Include="XmlSchemas.cs" />
+    <Compile Include="Xml\XmlSerializationNotificationEventArgs.cs" />
+    <Compile Include="Xml\XmlSerializationProgressChangedEventArgs.cs" />
+    <Compile Include="Xml\XmlSerializationResult.cs" />
+    <Compile Include="Xml\XmlSerializer.cs" />
+    <Compile Include="Xml\XmlValidationExtensionMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Model\CERSModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CERSModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config" />
+    <None Include="Model\CERSModel.edmx.diagram">
+      <DependentUpon>CERSModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\CERS.Model.CERSEntities.datasource" />
+    <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UPF.Core\UPF.Core.csproj">
+      <Project>{CDD94405-9FCC-4444-BCD8-CF763A18727C}</Project>
+      <Name>UPF.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UPF\UPF.csproj">
+      <Project>{0ED5C9D8-6EB6-4A61-AB5D-598956399F13}</Project>
+      <Name>UPF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\Images\Circles\Circle_Blue16.png" />
+    <EmbeddedResource Include="Reports\Images\Circles\Circle_Green16.png" />
+    <EmbeddedResource Include="Reports\Images\Circles\Circle_Grey16.png" />
+    <EmbeddedResource Include="Reports\Images\Circles\Circle_Orange16.png" />
+    <EmbeddedResource Include="Reports\Images\Circles\Circle_Red16.png" />
+    <EmbeddedResource Include="Reports\Images\primary-navigation-button-inactive-bg.png" />
+    <EmbeddedResource Include="Reports\Images\sub-navigation-content-bg.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Reports\Reports\BusinessActivitiesReport.resx">
+      <DependentUpon>BusinessActivitiesReport.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\BusinessOwnerOperatorReport.resx">
+      <DependentUpon>BusinessOwnerOperatorReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\CERSReportMaster.resx">
+      <DependentUpon>CERSReportMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\HazMatInventoryMatrixReport.resx">
+      <DependentUpon>HazMatInventoryMatrixReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\HazMatInventoryReport.resx">
+      <DependentUpon>HazMatInventoryReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\RemoteWasteConsolidationSiteAnnualNotificationReport.resx">
+      <DependentUpon>RemoteWasteConsolidationSiteAnnualNotificationReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\SubmittalCoverPageReport.resx">
+      <DependentUpon>SubmittalCoverPageReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\TieredPermittingCAReport.resx">
+      <DependentUpon>TieredPermittingCAReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\TieredPermittingCELReport.resx">
+      <DependentUpon>TieredPermittingCELReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\TieredPermittingCESQTReport.resx">
+      <DependentUpon>TieredPermittingCESQTReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\TieredPermittingCESWReport.resx">
+      <DependentUpon>TieredPermittingCESWReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\TieredPermittingFacilityReport.resx">
+      <DependentUpon>TieredPermittingFacilityReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\TieredPermittingFinancialAssuranceReport.resx">
+      <DependentUpon>TieredPermittingFinancialAssuranceReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\TieredPermittingPBRReport.resx">
+      <DependentUpon>TieredPermittingPBRReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\TieredPermittingReport.resx">
+      <DependentUpon>TieredPermittingReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\USTFacilityInformationReport.resx">
+      <DependentUpon>USTFacilityInformationReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\USTInstallModCertReport.resx">
+      <DependentUpon>USTInstallModCertReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\USTMonitoringPlanReport.resx">
+      <DependentUpon>USTMonitoringPlanReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Reports\USTTankInformationReport.resx">
+      <DependentUpon>USTTankInformationReport.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\Permissions\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties NotesItemIdentifier="CERS.notes" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

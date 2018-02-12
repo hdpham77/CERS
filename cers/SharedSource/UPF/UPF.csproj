@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Development</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0ED5C9D8-6EB6-4A61-AB5D-598956399F13}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UPF</RootNamespace>
+    <AssemblyName>UPF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Development|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Training\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <OutputPath>bin\Production\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Testing|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Testing\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Documentation|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Documentation\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CERS\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\..\SharedBinaries\DotNetZip\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="wnvxls, Version=1.2.1.0, Culture=neutral, PublicKeyToken=5b5f377bc08a4d32, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\SharedBinaries\Winnovative Excel\wnvxls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CERS\VersionInfo.cs">
+      <Link>VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="CachedTypeInstanceContainer.cs" />
+    <Compile Include="CachedTypeInstanceCollection.cs" />
+    <Compile Include="CollectionExtensionMethods.cs" />
+    <Compile Include="CommonFieldsMetaData.cs" />
+    <Compile Include="ConfigurationAccessor.cs" />
+    <Compile Include="Configuration\ApplicationIdentityConfigurationElement.cs" />
+    <Compile Include="Configuration\DiagnosticsConfigurationElement.cs" />
+    <Compile Include="Configuration\DocumentStorageConfigurationElement.cs" />
+    <Compile Include="Configuration\DocumentStorageProviderConfigurationElement.cs" />
+    <Compile Include="Configuration\DocumentStorageProviderConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\DocumentUploadElementConfiguration.cs" />
+    <Compile Include="Configuration\ICAPConfigurationElement.cs" />
+    <Compile Include="Configuration\ICAPHeaderRuleConfigurationElement.cs" />
+    <Compile Include="Configuration\ICAPHeaderRuleConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\ICAPServerConfigurationElement.cs" />
+    <Compile Include="Configuration\ICAPServerConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\LicenseKeyConfigurationElement.cs" />
+    <Compile Include="Configuration\LicenseKeyConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\UPFConfigurationSection.cs" />
+    <Compile Include="Configuration\EnvironmentConfigurationElement.cs" />
+    <Compile Include="Configuration\EnvironmentProfileConfigurationElement.cs" />
+    <Compile Include="Configuration\EnvironmentProfileConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\ErrorReportingConfigurationElement.cs" />
+    <Compile Include="Configuration\NamedConfigurationElement.cs" />
+    <Compile Include="Configuration\NamedConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\TypedKeyConfigurationElement.cs" />
+    <Compile Include="Configuration\TypedKeyConfigurationElementCollection.cs" />
+    <Compile Include="CryptoHelper.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="DataExtensionMethods.cs" />
+    <Compile Include="DateUtilities.cs" />
+    <Compile Include="DebugHelper.cs" />
+    <Compile Include="DocumentStorage.cs" />
+    <Compile Include="DocumentStoragePutResult.cs" />
+    <Compile Include="EntityDifferenceProcessor.cs" />
+    <Compile Include="EntityFramework\ObjectContextExtensionMethods.cs" />
+    <Compile Include="EntityPropertyDifference.cs" />
+    <Compile Include="EntityPropertyDifferenceCollection.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="EnvironmentProfile.cs" />
+    <Compile Include="EnvironmentProfileCollection.cs" />
+    <Compile Include="EnvironmentProfileManager.cs" />
+    <Compile Include="ErrorInfo.cs" />
+    <Compile Include="ErrorInfoCollection.cs" />
+    <Compile Include="Excel.cs" />
+    <Compile Include="ExcelColumnMapping.cs" />
+    <Compile Include="ExcelColumnMappingCollection.cs" />
+    <Compile Include="HttpAuthorizationHeaderValue.cs" />
+    <Compile Include="IAccount.cs" />
+    <Compile Include="ICAP\Enumerations.cs" />
+    <Compile Include="ICAP\ICAPClient.cs" />
+    <Compile Include="ICAP\ICAPConfiguration.cs" />
+    <Compile Include="ICAP\ICAPConnection.cs" />
+    <Compile Include="ICAP\ICAPHeaderResult.cs" />
+    <Compile Include="ICAP\ICAPHeaderResultCollection.cs" />
+    <Compile Include="ICAP\ICAPHeaderRule.cs" />
+    <Compile Include="ICAP\ICAPHeaderRuleCollection.cs" />
+    <Compile Include="ICAP\ICAPOptionsHeader.cs" />
+    <Compile Include="ICAP\ICAPOptionsHeaderCollection.cs" />
+    <Compile Include="ICAP\ICAPOptionsResult.cs" />
+    <Compile Include="ICAP\ICAPRequest.cs" />
+    <Compile Include="ICAP\ICAPResult.cs" />
+    <Compile Include="ICAP\ICAPServer.cs" />
+    <Compile Include="ICAP\ICAPServerCollection.cs" />
+    <Compile Include="ICAP\ICAPServerResult.cs" />
+    <Compile Include="ICAP\ICAPServerResultCollection.cs" />
+    <Compile Include="ICAP\ICAPServerRetry.cs" />
+    <Compile Include="ICommonFields.cs" />
+    <Compile Include="IdentityConfiguration.cs" />
+    <Compile Include="IDNameLookupEntity.cs" />
+    <Compile Include="IEntityWithID.cs" />
+    <Compile Include="IIDNameLookupEntity.cs" />
+    <Compile Include="IModelEntityWithID.cs" />
+    <Compile Include="ILookupEntity.cs" />
+    <Compile Include="IModelEntity.cs" />
+    <Compile Include="IOHelper.cs" />
+    <Compile Include="IValidatableObject.cs" />
+    <Compile Include="LicenseKeys.cs" />
+    <Compile Include="Linq\DataSetLinqOperators.cs" />
+    <Compile Include="Linq\DynamicLibrary.cs" />
+    <Compile Include="Linq\ObjectLinqOperators.cs" />
+    <Compile Include="LookupEntity.cs" />
+    <Compile Include="LookupEntityExtensionMethods.cs" />
+    <Compile Include="LookupTableCacheItem.cs" />
+    <Compile Include="LookupTableCacheItemCollection.cs" />
+    <Compile Include="MailHelper.cs" />
+    <Compile Include="MimeType.cs" />
+    <Compile Include="ModelAttributeCacheItem.cs" />
+    <Compile Include="ModelEntityMetaData.cs" />
+    <Compile Include="ModelExtensionMethods.cs" />
+    <Compile Include="ModelMetaDataAttribute.cs" />
+    <Compile Include="ModelMetadataHelper.cs" />
+    <Compile Include="ModelValidationException.cs" />
+    <Compile Include="NetHelper.cs" />
+    <Compile Include="NumericExtensionMethods.cs" />
+    <Compile Include="ObjectContextFactory.cs" />
+    <Compile Include="ObjectPropertyCache.cs" />
+    <Compile Include="ObjectShredder.cs" />
+    <Compile Include="ObjectShredderOptionsAttribute.cs" />
+    <Compile Include="Pair.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Providers\DocumentFileSystemStorageProvider.cs" />
+    <Compile Include="Providers\DocumentStorageProvider.cs" />
+    <Compile Include="Providers\DocumentStorageProviderCollection.cs" />
+    <Compile Include="Providers\Enumerations.cs" />
+    <Compile Include="Providers\FileSystemPathBuilder.cs" />
+    <Compile Include="Repository\CrudableRepositoryBase.cs" />
+    <Compile Include="Repository\RepositoryBase.cs" />
+    <Compile Include="RNGHelper.cs" />
+    <Compile Include="DocumentStorageLocation.cs" />
+    <Compile Include="LevenshteinDistance.cs" />
+    <Compile Include="SimpleLookupItem.cs" />
+    <Compile Include="SimpleLookupItemCollection.cs" />
+    <Compile Include="Strings.cs" />
+    <Compile Include="StringsExtensionMethods.cs" />
+    <Compile Include="Triple.cs" />
+    <Compile Include="ModelValidationResult.cs" />
+    <Compile Include="ViewModel\GridViewModel.cs" />
+    <Compile Include="ViewModel\IGridViewModel.cs" />
+    <Compile Include="ViewModel\ISearchViewModel.cs" />
+    <Compile Include="ViewModel\IViewModel.cs" />
+    <Compile Include="ViewModel\SearchViewModel.cs" />
+    <Compile Include="ViewModel\ViewModel.cs" />
+    <Compile Include="WebHelper.cs" />
+    <Compile Include="XmlExtensionMethods.cs" />
+    <Compile Include="XMLHelper.cs" />
+    <Compile Include="XmlSchemaValidationResult.cs" />
+    <Compile Include="XmlSerialization.cs" />
+    <Compile Include="ZipFileExtensionMethods.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

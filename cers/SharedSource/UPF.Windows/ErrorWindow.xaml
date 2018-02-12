@@ -1,0 +1,33 @@
+﻿<src:WindowBase x:Class="UPF.Windows.ErrorWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:src="clr-namespace:UPF.Windows"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300"
+				Title="ErrorWindow" Height="353" Width="625" Loaded="WindowBase_Loaded" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterOwner"
+				>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="100"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="40"/>
+		</Grid.RowDefinitions>
+		<GroupBox Header="Error Message" Grid.Row="0" Margin="5">
+			<TextBox Name="tbGeneralInfo" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" BorderThickness="0" IsReadOnly="true" Margin="2"/>
+		</GroupBox>
+		<GroupBox Header="Detailed Error Information" Grid.Row="1" Margin="5">
+			<TextBox Name="tbDetailedErrorInfo" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" Margin="2" Background="Gainsboro" IsReadOnly="true" AcceptsReturn="true" AcceptsTab="true"></TextBox>
+		</GroupBox>
+		<Grid Grid.Row="2" Margin="5">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition/>
+				<ColumnDefinition Width="75"/>
+				<ColumnDefinition Width="90"/>
+			</Grid.ColumnDefinitions>
+			<Button Grid.Column="1" Margin="2" Name="btnOK" Click="btnOK_Click">OK</Button>
+			<Button Grid.Column="2" Margin="2" Name="btnSendReport" Click="btnSendReport_Click">Send Report</Button>
+		</Grid>
+	</Grid>
+</src:WindowBase>

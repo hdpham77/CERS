@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Development</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CDD94405-9FCC-4444-BCD8-CF763A18727C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UPF.Core</RootNamespace>
+    <AssemblyName>UPF.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Development|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Testing|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\UPF.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Staging|AnyCPU'">
+    <OutputPath>bin\Staging\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Training|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Training\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>true</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Production|AnyCPU'">
+    <OutputPath>bin\Production\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Documentation|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Documentation\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\UPF.Core.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CERS\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\CERS\VersionInfo.cs">
+      <Link>VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="AuthenticationResult.cs" />
+    <Compile Include="Compositions\AccountSignInHistoryEntryGridViewItem.cs" />
+    <Compile Include="Compositions\LinkInformation.cs" />
+    <Compile Include="Compositions\SecurityQuestionAnswer.cs" />
+    <Compile Include="Compositions\AccountSignInHistory.cs" />
+    <Compile Include="CoreServiceLocator.cs" />
+    <Compile Include="CoreSystemServiceManager.cs" />
+    <Compile Include="ICoreRepository.cs" />
+    <Compile Include="ICoreRepositoryManager.cs" />
+    <Compile Include="ICoreSystemService.cs" />
+    <Compile Include="ICoreSystemServiceManager.cs" />
+    <Compile Include="ISecurityQuestion.cs" />
+    <Compile Include="Model\ActivityLog.cs" />
+    <Compile Include="Model\LUTActivityLogEventLevel.cs" />
+    <Compile Include="Model\LUTSystemPortalEnvironment.cs" />
+    <Compile Include="Model\LUTSystemPortalType.cs" />
+    <Compile Include="Model\SystemPortalEnvironmentSetting.cs" />
+    <Compile Include="Model\UrlLink.cs" />
+    <Compile Include="PortalManager.cs" />
+    <Compile Include="PortalUrl.cs" />
+    <Compile Include="PortalUrlCollection.cs" />
+    <Compile Include="Repository\LookupTableRepository.cs" />
+    <Compile Include="Repository\UrlLinkRepository.cs" />
+    <Compile Include="SystemServices\AuthenticationService.cs" />
+    <Compile Include="Model\Enhancement.cs" />
+    <Compile Include="Model\SystemPortalEnvironmentSettingUrl.cs" />
+    <Compile Include="PortalConfiguration.cs" />
+    <Compile Include="PortalConfigurationCollection.cs" />
+    <Compile Include="Repository\AccountAuthenticationAttemptRepository.cs" />
+    <Compile Include="Repository\AccountAuthenticationStatisticRepository.cs" />
+    <Compile Include="Repository\AccountRepository.cs" />
+    <Compile Include="AuthenticationManager.cs" />
+    <Compile Include="Configuration\CoreConfigurationSection.cs" />
+    <Compile Include="Configuration\PortalConfigurationElement.cs" />
+    <Compile Include="Configuration\RegistryParameters.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="CoreRepositoryManager.cs" />
+    <Compile Include="Repository\AccountSecurityQuestionAnswerRepository.cs" />
+    <Compile Include="Repository\ActivityLogRepository.cs" />
+    <Compile Include="Repository\CoreCrudableRepositoryBase.cs" />
+    <Compile Include="Repository\CountyRepository.cs" />
+    <Compile Include="Cryptography\Symmetric.cs" />
+    <Compile Include="Enumerations.cs" />
+    <Compile Include="Model\Account.cs" />
+    <Compile Include="Model\AccountAuthenticationAttempt.cs" />
+    <Compile Include="Model\AccountAuthenticationStatistic.cs" />
+    <Compile Include="Model\AccountSecurityQuestionAnswer.cs" />
+    <Compile Include="Model\ContactAccountAuthenticationStatistic.cs" />
+    <Compile Include="Model\UPFCoreModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UPFCoreModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\SecurityQuestion.cs" />
+    <Compile Include="Model\Setting.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CoreRepositoryBase.cs" />
+    <Compile Include="Repository\SecurityQuestionRepository.cs" />
+    <Compile Include="Repository\SettingRepository.cs" />
+    <Compile Include="Repository\SystemPortalRepository.cs" />
+    <Compile Include="SystemServices\ActivityLogService.cs" />
+    <Compile Include="SystemServices\PortalService.cs" />
+    <Compile Include="SystemServices\UrlService.cs" />
+    <Compile Include="SystemServices\SystemServiceBase.cs" />
+    <Compile Include="UsernameFormatValidationResult.cs" />
+    <Compile Include="Validations.cs" />
+    <Compile Include="ViewModels\ActivityLogGridViewModel.cs" />
+    <Compile Include="ViewModels\ActivityLogViewModel.cs" />
+    <Compile Include="ViewModels\SystemPortalManagementViewModel.cs" />
+    <Compile Include="ViewModels\SystemPortalSummaryGridViewModel.cs" />
+    <Compile Include="ViewModels\SystemPortalUrlRecentSignInActivityGridViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <EntityDeploy Include="Model\UPFCoreModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UPFCoreModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\UPF\UPF.csproj">
+      <Project>{0ED5C9D8-6EB6-4A61-AB5D-598956399F13}</Project>
+      <Name>UPF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
